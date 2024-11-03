@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mone.com</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+        }
+        .centered-text {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .intro-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+            width: 100%;
+            min-height: 300px;
+            padding-left: 80px; /* Adds space for sidebar */
+        }
+        .intro-pic {
+            max-width: 80%;
+            height: auto;
+        }
+        .sidebar {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            top: 55px;
+            background-color: white;
+            width: 72px;
+            z-index: 200;
+            padding-top: 5px;
+        }
+        .sidebar-link {
+            height: 74px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+        }
+        .sidebar-link:hover {
+            background-color: rgb(235, 235, 235);
+        }
+        .sidebar-link img {
+            height: 44px;
+            margin-bottom: 4px;
+        }
+        .sidebar-link div {
+            font-size: 10px;
+        }
+        /* Style for each section to create space and avoid sidebar overlap */
+        section {
+            min-height: 500px;
+            width: 100%;
+            padding: 20px;
+            padding-left: 80px; /* Adds space for sidebar */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <p class="centered-text"><strong>Welcome to Money!!!</strong></p>
+    
+    <div class="intro-wrapper">
+        <img src="icons/intro-pic.jpeg" class="intro-pic">
+    </div>
+
+    <!-- Sidebar with anchor links to each section -->
+    <nav class="sidebar">
+        <a href="#dashboard" class="sidebar-link">
+            <img src="icons/dashboard.webp">
+            <div>Dashboard</div>
+        </a>
+        <a href="#budget" class="sidebar-link">
+            <img src="icons/budget.jpg">
+            <div>Budget</div>
+        </a>
+        <a href="#goal" class="sidebar-link">
+            <img src="icons/goal.png">
+            <div>Goal Count</div>
+        </a>
+        <a href="#advice" class="sidebar-link">
+            <img src="icons/advice.png">
+            <div>Advice</div>
+        </a>
+        <a href="#stock" class="sidebar-link">
+            <img src="icons/stock.jpg">
+            <div>Stock</div>
+        </a>
+        <div class="sidebar-link">
+            <a href="account.html" target="_blank" style="text-decoration: none; color: inherit;">
+                <img src="icons/account.png" alt="Account">
+                <div>Account</div>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Sections with IDs for each sidebar link -->
+    <section id="dashboard">
+        <section id="dashboard">
+            <h2>Dashboard</h2>
+            <p>Welcome to your financial dashboard! Here’s a quick summary of your current financial status:</p>
+            <ul>
+                <li><strong>Balance:</strong> $X,XXX.XX</li>
+                <li><strong>Recent Transactions:</strong> Last 5 transactions listed here.</li>
+                <li><strong>Financial Goals:</strong> Goal status and progress.</li>
+            </ul>
+            <p>Click on the sections on the left to explore more!</p>
+        </section>
+        <h2>Budget</h2>
+        <p>Content for the budget section goes here.</p>
+    </section>
+    <section id="goal">
+        <h2>Goal Count</h2>
+        <p>Content for the goal count section goes here.</p>
+    </section>
+    <section id="advice">
+        <h2>Advice</h2>
+        <p>Content for the advice section goes here.</p>
+    </section>
+    <section id="stock">
+        <h2>Stock</h2>
+        <p>Content for the stock section goes here.</p>
+    </section>
+    <section id="account">
+        <h2>Account</h2>
+        <p>Content for the account section goes here.</p>
+    </section>
+</body>
+</html>
