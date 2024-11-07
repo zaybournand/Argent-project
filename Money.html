@@ -12,7 +12,6 @@
             margin: 0;
         }
 
-        /* Button Container to Position Buttons in the Top Right */
         .button-container {
             position: fixed;
             top: 10px;
@@ -21,7 +20,6 @@
             gap: 10px;
         }
         
-        /* Styling for Sign Up and Log In Buttons */
         .sign-button {
             padding: 10px 20px;
             font-size: 16px;
@@ -31,19 +29,19 @@
         }
 
         .sign-button:nth-child(1) {
-            background-color: #4CAF50; /* Green for Sign Up */
+            background-color: #4CAF50;
             color: white;
         }
 
         .sign-button:nth-child(2) {
-            background-color: #0f7fda; /* Blue for Log In */
+            background-color: #0f7fda;
             color: white;
         }
 
         .centered-text {
             font-size: 24px;
             text-align: center;
-            margin-top: 60px; /* Adjusted for button container spacing */
+            margin-top: 60px;
         }
 
         .intro-wrapper {
@@ -53,14 +51,13 @@
             flex-grow: 1;
             width: 100%;
             min-height: 300px;
-            padding-left: 80px; /* Adds space for sidebar */
+            padding-left: 80px;
         }
 
         .intro-pic {
             max-width: 80%;
             width: 1500px;
             height: auto;
-            margin-bottom: 1000px;
             margin-top: 100px;
         }
 
@@ -99,44 +96,38 @@
             font-size: 10px;
         }
 
-        .unique-section {
-            margin: 40px 0; /* Different margin for unique sections */
-        }
-
-        /* Style for each section to create space and avoid sidebar overlap */
         section {
             min-height: 500px;
             width: 100%;
-            padding: 20px 0; /* Adjust padding for vertical spacing without creating a box */
-            box-sizing: border-box; /* Ensure padding does not affect overall width */
-            display: flex; /* Use flexbox to center the title */
-            flex-direction: column; /* Align children in a column */
-            align-items: center; /* Center children horizontally */
+            padding: 20px 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         h2 {
-            margin: 1000px; /* Remove default margin for the h2 title */
-            text-align: center; /* Center align the title text */
-            font-size: 24px; /* Adjust title size if needed */
-            font-weight: bold; /* Make title bold */
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
         }
 
         .title-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100px; /* Adjust height as needed */
-            margin-top: 20px; /* Space above the title */
+            height: 100px;
+            margin-top: 20px;
         }
 
         .welcome-title {
-            font-size: 36px; /* Larger font size */
-            font-weight: bold; /* Bold font weight */
-            color: #333; /* Darker text color for professionalism */
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-            background-color: rgba(255, 255, 255, 0.8); /* Light background for contrast */
-            padding: 10px 20px; /* Padding for spacing */
-            border-radius: 10px; /* Rounded corners */
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 10px 20px;
+            border-radius: 10px;
         }
 
         #chat-container {
@@ -168,15 +159,10 @@
         #visitCounter {
             margin-top: 20px;
         }
-        #stock-chart {
-            max-width: 600px; /* Limit width for better display */
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
 
-    <!-- Button Container for Sign Up and Log In Buttons -->
     <div class="button-container">
         <a href="signup.html"><button class="sign-button">Sign Up</button></a>
         <a href="login.html"><button class="sign-button">Log In</button></a>
@@ -187,10 +173,9 @@
     </div>
 
     <div class="intro-wrapper">
-        <img src="icons/intro-pic.jpeg" class="intro-pic">
+        <img src="icons/intro-pic.jpeg" class="intro-pic" alt="Welcome Image">
     </div>
 
-    <!-- Sidebar with anchor links to each section -->
     <nav class="sidebar">
         <a href="#dashboard" class="sidebar-link">
             <img src="icons/dashboard.webp" alt="Dashboard">
@@ -208,10 +193,6 @@
             <img src="icons/advice.png" alt="Advice">
             <div>Advice</div>
         </a>
-        <a href="#stock" class="sidebar-link">
-            <img src="icons/stock.jpg" alt="Stock">
-            <div>Stock</div>
-        </a>
         <div class="sidebar-link">
             <a href="account.html" target="_blank" style="text-decoration: none; color: inherit;">
                 <img src="icons/account.png" alt="Account">
@@ -220,84 +201,79 @@
         </div>
     </nav>
 
-
-    <!-- Sections with IDs for each sidebar link -->
     <div class="section-to">
         <section id="dashboard">
             <h2>Dashboard</h2>
             <p>Welcome to your financial dashboard! Here’s a quick summary of your current financial status:</p>
             <ul>
-                <li><strong>Days Till Goal:</strong></li>
-                <img src="icons/day-left.jpg" alt="Days Left">
-                <li><strong>Recent Transactions:</strong> Last 5 transactions will be listed here.</li>
-                <li><strong>Financial Goals:</strong> Goal status and progress will be displayed.</li>
+                <li><strong>Days Till Goal:</strong> 45 days left to reach your savings target.</li>
+                <li><strong>Recent Transactions:</strong> 
+                    <ul>
+                        <li>Purchase at Grocery Store - $75.50</li>
+                        <li>Gas Station - $40.00</li>
+                        <li>Subscription Service - $9.99</li>
+                        <li>Restaurant - $34.25</li>
+                        <li>Clothing Store - $50.00</li>
+                    </ul>
+                </li>
+                <li><strong>Financial Goals:</strong> Savings target of $5000 - 75% completed.</li>
             </ul>
             <p>Click on the sections on the left to explore more!</p>
         </section>
         
         <section id="budget">
             <h2>Budget</h2>
-            <p>Content for the budget section goes here.</p>
+            <p>This month’s budget:</p>
+            <ul>
+                <li><strong>Income:</strong> $3000</li>
+                <li><strong>Rent:</strong> $1000</li>
+                <li><strong>Groceries:</strong> $300</li>
+                <li><strong>Utilities:</strong> $150</li>
+                <li><strong>Entertainment:</strong> $100</li>
+                <li><strong>Savings:</strong> $500</li>
+            </ul>
+            <p>Remaining budget: $950</p>
         </section>
     
         <section id="goal">
             <h2>Goal Count</h2>
-            <p>Content for the goal count section goes here.</p>
-            <div>
-                <img src="icons/goal.png" alt="Goal Icon" style="height: 44px;">
-                <span id="visitCounter" style="font-size: 24px; margin-left: 10px;"></span>
-            </div>
+            <p>Your progress towards various financial goals:</p>
+            <ul>
+                <li><strong>Emergency Fund:</strong> 80% complete</li>
+                <li><strong>Vacation Savings:</strong> 50% complete</li>
+                <li><strong>Car Purchase:</strong> 30% complete</li>
+            </ul>
         </section>
         
         <section id="advice">
             <h2>Advice</h2>
-            <p>Content for the advice section goes here.</p>
-            
+            <p>Get daily financial advice and tips to improve your savings.</p>
             <div id="chat-container">
-                <div id="chat-box" style="border: 1px solid #ccc; padding: 10px; height: 200px; overflow-y: scroll; margin-bottom: 10px;">
+                <div id="chat-box">
                     <div id="chat-log"></div>
                 </div>
                 <input type="text" id="user-input" placeholder="Type your question here..." style="width: 70%; padding: 10px;" />
                 <button id="send-button" style="padding: 10px;">Send</button>
             </div>
         </section>
-        
-        <section id="stock">
-            <h2>Stock</h2>
-            <p>Content for the stock section goes here.</p>
-            <canvas id="stock-chart"></canvas>
-        </section>
-        
-      
     </div>
     
-    
     <script>
-        // Counter functionality to track visits
         function updateVisitCounter() {
-            let visitCount = localStorage.getItem('visitCount');
-    
-            if (visitCount) {
-                visitCount = parseInt(visitCount) + 1;
-            } else {
-                visitCount = 1; // First visit
-            }
-    
+            let visitCount = localStorage.getItem('visitCount') || 0;
+            visitCount++;
             localStorage.setItem('visitCount', visitCount);
+            document.getElementById('visitCounter').innerText = `Visits: ${visitCount}`;
         }
-    
-        // Event listener for sending messages
+
         document.getElementById('send-button').addEventListener('click', async function () {
             const userInput = document.getElementById('user-input').value.trim();
             if (userInput) {
                 addMessageToChatLog("You: " + userInput);
                 
-                // Send message to server for a dynamic response
                 const response = await fetch('/chatbot', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ input: userInput }),
                 });
                 const data = await response.json();
@@ -306,72 +282,16 @@
                 document.getElementById('user-input').value = '';
             }
         });
-    
-        // Function to add messages to chat log
+
         function addMessageToChatLog(message) {
             const chatLog = document.getElementById('chat-log');
             chatLog.innerHTML += `<div>${message}</div>`;
-            chatLog.scrollTop = chatLog.scrollHeight; // Auto-scroll to the bottom
+            chatLog.scrollTop = chatLog.scrollHeight;
         }
-    
-        // Function to fetch stock data and render the chart
-        async function fetchStockData() {
-            const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
-            const symbol = 'AAPL'; // Example stock symbol (Apple Inc.)
-            const url = `https://api.example.com/stock/${symbol}?apikey=${apiKey}`; // Replace with actual API URL
-    
-            const response = await fetch(url);
-            const data = await response.json();
-    
-            // Assuming the API returns data in a format like { "prices": [[timestamp, price], ...] }
-            const prices = data.prices.map(priceData => priceData[1]); // Extract the prices
-            const timestamps = data.prices.map(priceData => new Date(priceData[0]).toLocaleDateString()); // Format timestamps
-    
-            renderChart(timestamps, prices);
-        }
-    
-        // Function to render the chart with stock prices
-        function renderChart(labels, data) {
-            const ctx = document.getElementById('stock-chart').getContext('2d');
-            new Chart(ctx, {
-                type: 'line', // Use line chart for stock prices
-                data: {
-                    labels: labels,
-                    datasets: [{
-                        label: 'Stock Price',
-                        data: data,
-                        borderColor: 'rgba(75, 192, 192, 1)',
-                        borderWidth: 2,
-                        fill: false,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    scales: {
-                        x: {
-                            title: {
-                                display: true,
-                                text: 'Date'
-                            }
-                        },
-                        y: {
-                            title: {
-                                display: true,
-                                text: 'Price (USD)'
-                            }
-                        }
-                    }
-                }
-            });
-        }
-    
-        // Initialize functions when the page loads
+
         window.onload = function() {
-            updateVisitCounter();
-            fetchStockData();
+            showDailyAdvice();
         };
     </script>
-    
 </body>
 </html>
-
