@@ -10,6 +10,7 @@
             flex-direction: column;
             align-items: center;
             margin: 0;
+            font-family: Arial, sans-serif;
         }
 
         .button-container {
@@ -38,10 +39,11 @@
             color: white;
         }
 
-        .centered-text {
-            font-size: 24px;
+        .main-title {
+            font-size: 36px;
             text-align: center;
-            margin-top: 60px;
+            margin-top: 20px;
+            font-weight: bold;
         }
 
         .intro-wrapper {
@@ -56,9 +58,9 @@
 
         .intro-pic {
             max-width: 80%;
-            width: 1500px;
+            width: 400px;
             height: auto;
-            margin-top: 100px;
+            margin-top: 20px;
         }
 
         .sidebar {
@@ -96,69 +98,45 @@
             font-size: 10px;
         }
 
-        section {
-            min-height: 500px;
-            width: 100%;
-            padding: 20px 0;
-            box-sizing: border-box;
+        /* Step container styling */
+        .steps-container {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 20px;
+        }
+
+        /* Individual step boxes */
+        .step-box {
+            border: 2px solid #333;
+            border-radius: 10px;
+            padding: 20px;
+            width: 150px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            justify-content: space-between;
         }
 
-        h2 {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .title-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100px;
-            margin-top: 20px;
-        }
-
-        .welcome-title {
-            font-size: 36px;
-            font-weight: bold;
-            color: #333;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 10px 20px;
-            border-radius: 10px;
-        }
-
-        #chat-container {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-top: 20px;
-            max-width: 500px;
-        }
-
-        #messages {
-            height: 300px;
-            overflow-y: auto;
+        .step-title {
+            font-size: 20px;
             margin-bottom: 10px;
-            border: 1px solid #ddd;
-            padding: 5px;
         }
 
-        .user-message {
-            text-align: right;
-            margin: 5px 0;
+        .step-info {
+            font-size: 16px;
         }
 
-        .bot-message {
-            text-align: left;
-            margin: 5px 0;
-            color: blue;
-        }
+        .step1 { background-color: #4CAF50; } /* Green */
+        .step2 { background-color: #0f7fda; } /* Blue */
+        .step3 { background-color: #f39c12; } /* Orange */
+        .step4 { background-color: #e74c3c; } /* Red */
+        .step5 { background-color: #8e44ad; } /* Purple */
 
-        #visitCounter {
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
@@ -168,12 +146,13 @@
         <a href="login.html"><button class="sign-button">Log In</button></a>
     </div>
 
+    <!-- Updated title at the top -->
     <div class="title-container">
-        <p class="welcome-title"><strong>Welcome to Your Financial Dashboard</strong></p>
+        <p class="main-title">Achieve Your Financial Goals</p>
     </div>
 
     <div class="intro-wrapper">
-        <img src="icons/intro-pic.jpeg" class="intro-pic" alt="Welcome Image">
+        <img src="icons/intro-pic.png" class="intro-pic" alt="Welcome Image">
     </div>
 
     <nav class="sidebar">
@@ -201,97 +180,29 @@
         </div>
     </nav>
 
-    <div class="section-to">
-        <section id="dashboard">
-            <h2>Dashboard</h2>
-            <p>Welcome to your financial dashboard! Here’s a quick summary of your current financial status:</p>
-            <ul>
-                <li><strong>Days Till Goal:</strong> 45 days left to reach your savings target.</li>
-                <li><strong>Recent Transactions:</strong> 
-                    <ul>
-                        <li>Purchase at Grocery Store - $75.50</li>
-                        <li>Gas Station - $40.00</li>
-                        <li>Subscription Service - $9.99</li>
-                        <li>Restaurant - $34.25</li>
-                        <li>Clothing Store - $50.00</li>
-                    </ul>
-                </li>
-                <li><strong>Financial Goals:</strong> Savings target of $5000 - 75% completed.</li>
-            </ul>
-            <p>Click on the sections on the left to explore more!</p>
-        </section>
-        
-        <section id="budget">
-            <h2>Budget</h2>
-            <p>This month’s budget:</p>
-            <ul>
-                <li><strong>Income:</strong> $3000</li>
-                <li><strong>Rent:</strong> $1000</li>
-                <li><strong>Groceries:</strong> $300</li>
-                <li><strong>Utilities:</strong> $150</li>
-                <li><strong>Entertainment:</strong> $100</li>
-                <li><strong>Savings:</strong> $500</li>
-            </ul>
-            <p>Remaining budget: $950</p>
-        </section>
-    
-        <section id="goal">
-            <h2>Goal Count</h2>
-            <p>Your progress towards various financial goals:</p>
-            <ul>
-                <li><strong>Emergency Fund:</strong> 80% complete</li>
-                <li><strong>Vacation Savings:</strong> 50% complete</li>
-                <li><strong>Car Purchase:</strong> 30% complete</li>
-            </ul>
-        </section>
-        
-        <section id="advice">
-            <h2>Advice</h2>
-            <p>Get daily financial advice and tips to improve your savings.</p>
-            <div id="chat-container">
-                <div id="chat-box">
-                    <div id="chat-log"></div>
-                </div>
-                <input type="text" id="user-input" placeholder="Type your question here..." style="width: 70%; padding: 10px;" />
-                <button id="send-button" style="padding: 10px;">Send</button>
-            </div>
-        </section>
+    <!-- Step boxes container -->
+    <div class="steps-container">
+        <div class="step-box step1">
+            <div class="step-title">STEP 1</div>
+            <div class="step-info">Sign-Up</div>
+        </div>
+        <div class="step-box step2">
+            <div class="step-title">STEP 2</div>
+            <div class="step-info">Make a Goal</div>
+        </div>
+        <div class="step-box step3">
+            <div class="step-title">STEP 3</div>
+            <div class="step-info">Get Guidance</div>
+        </div>
+        <div class="step-box step4">
+            <div class="step-title">STEP 4</div>
+            <div class="step-info">Make a Plan</div>
+        </div>
+        <div class="step-box step5">
+            <div class="step-title">STEP 5</div>
+            <div class="step-info">Make Money</div>
+        </div>
     </div>
-    
-    <script>
-        function updateVisitCounter() {
-            let visitCount = localStorage.getItem('visitCount') || 0;
-            visitCount++;
-            localStorage.setItem('visitCount', visitCount);
-            document.getElementById('visitCounter').innerText = `Visits: ${visitCount}`;
-        }
 
-        document.getElementById('send-button').addEventListener('click', async function () {
-            const userInput = document.getElementById('user-input').value.trim();
-            if (userInput) {
-                addMessageToChatLog("You: " + userInput);
-                
-                const response = await fetch('/chatbot', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ input: userInput }),
-                });
-                const data = await response.json();
-                
-                addMessageToChatLog("Bot: " + data.response);
-                document.getElementById('user-input').value = '';
-            }
-        });
-
-        function addMessageToChatLog(message) {
-            const chatLog = document.getElementById('chat-log');
-            chatLog.innerHTML += `<div>${message}</div>`;
-            chatLog.scrollTop = chatLog.scrollHeight;
-        }
-
-        window.onload = function() {
-            showDailyAdvice();
-        };
-    </script>
 </body>
 </html>
