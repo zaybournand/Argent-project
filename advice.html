@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Stocks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .stock-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .stock-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 200px;
+            padding: 15px;
+            text-align: left;
+        }
+        .stock-card h2 {
+            font-size: 18px;
+            color: #007bff;
+            margin: 0;
+        }
+        .stock-card p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+        #chatbot {
+            margin-top: 40px;
+            border-top: 2px solid #ddd;
+            padding-top: 20px;
+        }
+        #chat-output {
+            width: 300px;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            overflow-y: auto;
+            background: #fff;
+            margin: 0 auto;
+        }
+        #chatbot input[type="text"] {
+            width: 200px;
+            padding: 8px;
+            margin-top: 10px;
+        }
+        #chatbot button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        #chatbot button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top 10 Stocks</h1>
+    <div class="stock-container" id="stocks">
+        <!-- Stock data will be inserted here -->
+    </div>
+
+    <div id="chatbot">
+        <h2>Ask for Advice</h2>
+        <div id="chat-output"></div>
+        <input type="text" id="chat-input" placeholder="Type your question..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        // Replace with your actual API key for Twelve Data
+        const apiKey = "25887b1d511e489399664cd35d89fbbe"; 
+
+        // Sample stock data
+        const stocks = [
+            { symbol: "AAPL", name: "Apple Inc." },
+            { symbol: "MSFT", name: "Microsoft Corp." },
+            { symbol: "GOOGL", name: "Alphabet Inc." },
+            { symbol: "AMZN", name: "Amazon.com Inc." },
+            { symbol: "TSLA", name: "Tesla Inc." },
+            { symbol: "META", name: "Meta Platforms" },
+            { symbol: "NFLX", name: "Netflix Inc." },
+            { symbol: "NVDA", name: "NVIDIA Corp." },
+            { symbol: "V", name: "Visa Inc." },
+            { symbol: "JPM", name: "JPMorgan Chase & Co." }
+        ];
+
+        // Fetch stock price from Twelve Data API
+        async function fetchStockPrice(tickerSymbol) {
+            const url = `https://api.twelvedata.com/price?symbol=${tickerSymbol}&apikey=${apiKey}`;
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                if (data.price) {
+                    return data.price;
+                } else {
+                    console.error("Error fetching stock price for " + tickerSymbol);
+                    return "N/A";
+                }
+            } catch (error) {
+                console.error("Error fetching stock data:", error);
+                return "N/A";
+            }
+        }
+
+        // Display stock data on the page
+        async function displayStocks() {
+            const stocksContainer = document.getElementById("stocks");
+            for (const stock of stocks) {
+                const price = await fetchStockPrice(stock.symbol);
+                const formattedPrice = price !== "N/A" ? parseFloat(price).toFixed(2) : "N/A";
+
+                const stockCard = document.createElement("div");
+                stockCard.className = "stock-card";
+                stockCard.innerHTML = `
+                    <h2>${stock.symbol}</h2>
+                    <p><strong>${stock.name}</strong></p>
+                    <p>Price: $${formattedPrice}</p>
+                `;
+                stocksContainer.appendChild(stockCard);
+            }
+        }
+
+        // Simple chatbot interaction
+        const chatOutput = document.getElementById("chat-output");
+
+        // Send the user message and get chatbot's response
+        function sendMessage() {
+            const input = document.getElementById("chat-input").value;
+            document.getElementById("chat-input").value = "";
+            if (input) {
+                appendChatMessage("User", input);
+                getChatbotResponse(input);
+            }
+        }
+
+        // Append messages to the chat window
+        function appendChatMessage(sender, message) {
+            const messageElement = document.createElement("p");
+            messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
+            chatOutput.appendChild(messageElement);
+            chatOutput.scrollTop = chatOutput.scrollHeight;
+        }
+
+        // Fetch response from the chatbot API (Dialogflow or your own custom API)
+        async function fetchChatbotResponse(message) {
+            const response = await fetch('https://api.dialogflow.com/v1/query?v=20150910', {
+                method: 'POST',
+                headers: {
+                    'Authorization': 'Bearer YOUR_DIALOGFLOW_API_KEY',
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    query: message,
+                    lang: 'en',
+                    sessionId: '12345',
+                }),
+            });
+            const data = await response.json();
+            return data.result.fulfillment.speech;
+        }
+
+        // Get chatbot's response and show in the chat
+        async function getChatbotResponse(input) {
+            const response = await fetchChatbotResponse(input);
+            appendChatMessage("Chatbot", response);
+        }
+
+        // Initialize the page with stock data
+        displayStocks();
+    </script>
+</body>
+</html>
