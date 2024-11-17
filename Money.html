@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mone.com</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -98,7 +100,6 @@
             font-size: 10px;
         }
 
-        /* Step container styling */
         .steps-container {
             display: flex;
             gap: 10px;
@@ -107,7 +108,6 @@
             padding: 20px;
         }
 
-        /* Individual step boxes */
         .step-box {
             border: 2px solid #333;
             border-radius: 10px;
@@ -131,12 +131,25 @@
             font-size: 16px;
         }
 
-        .step1 { background-color: #4CAF50; } /* Green */
-        .step2 { background-color: #0f7fda; } /* Blue */
-        .step3 { background-color: #f39c12; } /* Orange */
-        .step4 { background-color: #e74c3c; } /* Red */
-        .step5 { background-color: #8e44ad; } /* Purple */
+        .step1 { background-color: #4CAF50; }
+        .step2 { background-color: #0f7fda; }
+        .step3 { background-color: #f39c12; }
+        .step4 { background-color: #e74c3c; }
+        .step5 { background-color: #8e44ad; }
 
+        /* Content section hidden by default */
+        .content-section {
+            display: none;
+            margin-top: 20px;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Display active section */
+        .active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -146,7 +159,6 @@
         <a href="login.html"><button class="sign-button">Log In</button></a>
     </div>
 
-    <!-- Updated title at the top -->
     <div class="title-container">
         <p class="main-title">Achieve Your Financial Goals</p>
     </div>
@@ -156,24 +168,25 @@
     </div>
 
     <nav class="sidebar">
-        <a href="#dashboard" class="sidebar-link">
+        <!-- Updated to use anchor tags with href to link to pages -->
+        <a href="index.html" class="sidebar-link"> <!-- link to the main page -->
             <img src="icons/dashboard.webp" alt="Dashboard">
             <div>Dashboard</div>
         </a>
-        <a href="#budget" class="sidebar-link">
+        <a href="budget.html" class="sidebar-link">
             <img src="icons/budget.jpg" alt="Budget">
             <div>Budget</div>
         </a>
-        <a href="#goal" class="sidebar-link">
+        <a href="goal.html" class="sidebar-link">
             <img src="icons/goal.png" alt="Goal Count">
             <div>Goal Count</div>
         </a>
-        <a href="#advice" class="sidebar-link">
+        <a href="advice.html" class="sidebar-link">
             <img src="icons/advice.png" alt="Advice">
             <div>Advice</div>
         </a>
         <div class="sidebar-link">
-            <a href="account.html" target="_blank" style="text-decoration: none; color: inherit;">
+            <a href="account.html" class="sidebar-link">
                 <img src="icons/account.png" alt="Account">
                 <div>Account</div>
             </a>
