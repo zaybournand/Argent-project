@@ -5,19 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Page</title>
     <style>
-        /* Body Styling */
+        /* General Styling */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
+            display: flex;
             height: 100vh;
+        }
+
+        /* Sidebar Styling */
+        .sidebar {
+            width: 250px;
+            background: #333;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .sidebar-link {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .sidebar-link img {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .sidebar-link:hover {
+            background: #444;
+            padding: 5px;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+
+        /* Main Content Styling */
+        .main-content {
+            flex: 1;
+            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient Background */
             display: flex;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient Background */
             color: #333;
         }
 
-        /* Account Container Styling */
         .account-container {
             background: #ffffff; /* White Background */
             padding: 30px;
@@ -44,7 +81,6 @@
             margin: 8px 0;
         }
 
-        /* Logout Button Styling */
         .logout-btn {
             display: inline-block;
             padding: 12px 24px;
@@ -71,13 +107,41 @@
     </style>
 </head>
 <body>
-    <div class="account-container">
-        <h2>Account Information</h2>
-        <div class="account-details">
-            <p><strong>Name:</strong> John Doe</p>
-            <p><strong>Email:</strong> john.doe@example.com</p>
+    <!-- Sidebar Section -->
+    <nav class="sidebar">
+        <a href="Mone.html" class="sidebar-link">
+            <img src="icons/dashboard.webp" alt="Dashboard">
+            <div>Dashboard</div>
+        </a>
+        <a href="budget.html" class="sidebar-link">
+            <img src="icons/budget.jpg" alt="Budget">
+            <div>Budget</div>
+        </a>
+        <a href="goal.html" class="sidebar-link">
+            <img src="icons/goal.png" alt="Goal Count">
+            <div>Goal Count</div>
+        </a>
+        <a href="advice.html" class="sidebar-link">
+            <img src="icons/advice.png" alt="Advice">
+            <div>Advice</div>
+        </a>
+        <a href="account.html" class="sidebar-link">
+            <img src="icons/account.png" alt="Account">
+            <div>Account</div>
+        </a>
+    </nav>
+    
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <div class="account-container">
+            <h2>Account Information</h2>
+            <div class="account-details">
+                <p><strong>Name:</strong> John Doe</p>
+                <p><strong>Email:</strong> john.doe@example.com</p>
+            </div>
+            <a href="/logout" class="logout-btn">Log Out</a>
         </div>
-        <a href="/logout" class="logout-btn">Log Out</a>
     </div>
 </body>
 </html>
