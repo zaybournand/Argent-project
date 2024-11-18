@@ -11,19 +11,65 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+        }
+
+        .sidebar {
+            width: 240px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            height: 100%;
+            padding: 20px;
+            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
+            transition: width 0.3s;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #f4f4f4;
+        }
+
+        .sidebar a {
+            display: flex;
             align-items: center;
-            height: 100vh;
+            color: #fff;
+            padding: 12px;
+            text-decoration: none;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            font-size: 18px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .sidebar a img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .sidebar a:hover {
+            background-color: #444;
+            transform: translateX(10px);
+        }
+
+        .sidebar a.active {
+            background-color: #0056b3;
         }
 
         .form-container {
+            margin-left: 440px;  /* Increased the left margin to push the container more to the right */
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             width: 100%;
             max-width: 600px;
+            flex: 1;
         }
+
 
         .form-container h2 {
             text-align: center;
@@ -57,10 +103,6 @@
             outline: none;
         }
 
-        .form-group p {
-            margin: 0;
-        }
-
         button {
             width: 100%;
             padding: 10px;
@@ -78,6 +120,15 @@
     </style>
 </head>
 <body>
+    <div class="sidebar">
+        <h2>Financial Planning</h2>
+        <a href="Mone.html" class="active"><img src="icons/dashboard.webp" alt="Dashboard"> Dashboard</a>
+        <a href="budget.html"><img src="icons/budget.jpg" alt="Budget"> Budget</a>
+        <a href="goal.html"><img src="icons/goal.png" alt="Goal Count"> Goal Count</a>
+        <a href="advice.html"><img src="icons/advice.png" alt="Advice"> Advice</a>
+        <a href="account.html"><img src="icons/account.png" alt="Account"> Account</a>
+    </div>
+
     <div class="form-container">
         <h2>Budget Form</h2>
         
