@@ -82,7 +82,6 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            cursor: pointer;
             text-decoration: none;
             color: black;
         }
@@ -136,40 +135,29 @@
         .step3 { background-color: #f39c12; }
         .step4 { background-color: #e74c3c; }
         .step5 { background-color: #8e44ad; }
-
-        /* Content section hidden by default */
-        .content-section {
-            display: none;
-            margin-top: 20px;
-            padding: 20px;
-            text-align: center;
-            width: 100%;
-        }
-
-        /* Display active section */
-        .active {
-            display: block;
-        }
     </style>
 </head>
 <body>
 
+    <!-- Button Container -->
     <div class="button-container">
         <a href="signup.html"><button class="sign-button">Sign Up</button></a>
         <a href="login.html"><button class="sign-button">Log In</button></a>
     </div>
 
+    <!-- Title Section -->
     <div class="title-container">
         <p class="main-title">Achieve Your Financial Goals</p>
     </div>
 
+    <!-- Intro Section -->
     <div class="intro-wrapper">
         <img src="icons/intro-pic.png" class="intro-pic" alt="Welcome Image">
     </div>
 
+    <!-- Sidebar Navigation -->
     <nav class="sidebar">
-        <!-- Updated to use anchor tags with href to link to pages -->
-        <a href="index.html" class="sidebar-link"> <!-- link to the main page -->
+        <a href="index.html" class="sidebar-link">
             <img src="icons/dashboard.webp" alt="Dashboard">
             <div>Dashboard</div>
         </a>
@@ -185,15 +173,13 @@
             <img src="icons/advice.png" alt="Advice">
             <div>Advice</div>
         </a>
-        <div class="sidebar-link">
-            <a href="account.html" class="sidebar-link">
-                <img src="icons/account.png" alt="Account">
-                <div>Account</div>
-            </a>
-        </div>
+        <a href="account.html" class="sidebar-link">
+            <img src="icons/account.png" alt="Account">
+            <div>Account</div>
+        </a>
     </nav>
 
-    <!-- Step boxes container -->
+    <!-- Step Boxes -->
     <div class="steps-container">
         <div class="step-box step1">
             <div class="step-title">STEP 1</div>
