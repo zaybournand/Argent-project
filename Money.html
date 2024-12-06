@@ -44,7 +44,7 @@
         .main-title {
             font-size: 36px;
             text-align: center;
-            margin-top: 25px;
+            margin-top: 20px;
             font-weight: bold;
         }
 
@@ -129,6 +129,13 @@
         .step-info {
             font-size: 16px;
         }
+        .sidebar-link.disabled {
+            pointer-events: none; /* Prevent any interaction */
+            color: gray; /* Change text color to indicate it's inactive */
+            opacity: 0.6; /* Add transparency for visual feedback */
+            cursor: not-allowed; /* Change cursor to show it's disabled */
+        }
+
 
         .step1 { background-color: #4CAF50; }
         .step2 { background-color: #0f7fda; }
@@ -156,11 +163,12 @@
     </div>
 
     <!-- Sidebar Navigation -->
+    <!-- Sidebar Navigation -->
     <nav class="sidebar">
-        <a href="index.html" class="sidebar-link">
+        <span class="sidebar-link disabled">
             <img src="icons/dashboard.webp" alt="Dashboard">
             <div>Dashboard</div>
-        </a>
+        </span>
         <a href="budget.html" class="sidebar-link">
             <img src="icons/budget.jpg" alt="Budget">
             <div>Budget</div>
@@ -178,6 +186,7 @@
             <div>Account</div>
         </a>
     </nav>
+
 
     <!-- Step Boxes -->
     <div class="steps-container">
@@ -205,3 +214,4 @@
 
 </body>
 </html>
+
