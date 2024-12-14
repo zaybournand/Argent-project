@@ -1,5 +1,5 @@
 // Replace with your actual API key for Twelve Data
-const apiKey = "25887b1d511e489399664cd35d89fbbe"; 
+const apiKey = "ENTER YOUR API KEY HERE"; 
 
 // Sample stock data
 const stocks = [
