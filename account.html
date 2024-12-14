@@ -4,107 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Page</title>
-    <style>
-        /* General Styling */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            display: flex;
-            height: 100vh;
-        }
-
-        /* Sidebar Styling */
-        .sidebar {
-            width: 250px;
-            background: #333;
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .sidebar-link {
-            display: flex;
-            align-items: center;
-            margin: 15px 0;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .sidebar-link img {
-            width: 30px;
-            height: 30px;
-            margin-right: 10px;
-        }
-
-        .sidebar-link:hover {
-            background: #444;
-            padding: 5px;
-            border-radius: 5px;
-            transition: 0.3s ease;
-        }
-
-        /* Main Content Styling */
-        .main-content {
-            flex: 1;
-            background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient Background */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #333;
-        }
-
-        .account-container {
-            background: #ffffff; /* White Background */
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* Modern Shadow */
-            text-align: center;
-            width: 90%; /* Responsive Width */
-            max-width: 400px; /* Max Width for Larger Screens */
-        }
-
-        .account-container h2 {
-            margin: 0;
-            font-size: 1.8rem;
-            color: #444;
-        }
-
-        .account-details {
-            margin: 20px 0;
-            font-size: 1rem;
-            color: #555;
-        }
-
-        .account-details p {
-            margin: 8px 0;
-        }
-
-        .logout-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            font-size: 1rem;
-            font-weight: bold;
-            color: #fff;
-            background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient Button */
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.2s, box-shadow 0.2s; /* Smooth Animation */
-        }
-
-        .logout-btn:hover {
-            transform: translateY(-3px); /* Subtle Lift */
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Hover Shadow */
-        }
-
-        .logout-btn:active {
-            transform: translateY(1px); /* Subtle Press */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <link rel="stylesheet" href="account.css"> <!-- Linking external CSS -->
 </head>
 <body>
     <!-- Sidebar Section -->
@@ -131,18 +31,20 @@
         </a>
     </nav>
     
-
     <!-- Main Content Section -->
     <div class="main-content">
         <div class="account-container">
             <h2>Account Information</h2>
             <div class="account-details">
-                <p><strong>Name:</strong> {{ name }}</p>
-                <p><strong>Email:</strong> {{ email }}</p>
+                <p><strong>Name:</strong> <span id="user-name"></span></p>
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
             </div>
             <a href="Mone.html" class="logout-btn">Log Out</a>
         </div>
     </div>
+
+    <script src="account.js"></script> <!-- Linking external JavaScript -->
 </body>
 </html>
+
 
