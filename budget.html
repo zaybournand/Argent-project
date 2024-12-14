@@ -4,165 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        .sidebar {
-            width: 240px;
-            background-color: #333;
-            color: #fff;
-            position: fixed;
-            height: 100%;
-            padding: 20px;
-            box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.1);
-            transition: width 0.3s;
-        }
-
-        .sidebar h2 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 24px;
-            font-weight: 600;
-            color: #f4f4f4;
-        }
-
-        .sidebar a {
-            display: flex;
-            align-items: center;
-            color: #fff;
-            padding: 12px;
-            text-decoration: none;
-            margin-bottom: 20px;
-            border-radius: 4px;
-            font-size: 18px;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .sidebar a img {
-            width: 24px;
-            height: 24px;
-            margin-right: 10px;
-        }
-
-        .sidebar a:hover {
-            background-color: #444;
-            transform: translateX(10px);
-        }
-
-        .sidebar a.active {
-            background-color: #555;
-        }
-
-        .form-container {
-            margin-left: 260px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 600px;
-            flex: 1;
-        }
-
-        .form-container h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .form-group {
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 8px;
-        }
-
-        .form-group label {
-            font-weight: bold;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .form-group select,
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-        }
-
-        .form-group select:focus,
-        .form-group input:focus {
-            border-color: #007bff;
-            outline: none;
-        }
-
-        button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        @media (max-width: 768px) {
-            .sidebar {
-                width: 200px;
-            }
-
-            .form-container {
-                margin-left: 220px;
-                padding: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .sidebar {
-                width: 180px;
-            }
-
-            .form-container {
-                margin-left: 200px;
-                padding: 5px;
-            }
-
-            button {
-                font-size: 16px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="budget.css">
 </head>
 <body>
     <div class="sidebar">
         <h2>Financial Planning</h2>
-        <a href="Mone.html" class="active"><img src="icons/dashboard.webp" alt="Navigate to Dashboard"> Dashboard</a>
-        <a href="budget.html"><img src="icons/budget.jpg" alt="Navigate to Budget"> Budget</a>
-        <a href="goal.html"><img src="icons/goal.png" alt="Navigate to Goal Count"> Goal Count</a>
-        <a href="advice.html"><img src="icons/advice.png" alt="Navigate to Advice"> Advice</a>
-        <a href="account.html"><img src="icons/account.png" alt="Navigate to Account"> Account</a>
+        <a href="Mone.html" class="active"><img src="icons/dashboard.webp" alt="Dashboard"> Dashboard</a>
+        <a href="budget.html"><img src="icons/budget.jpg" alt="Budget"> Budget</a>
+        <a href="goal.html"><img src="icons/goal.png" alt="Goal Count"> Goal Count</a>
+        <a href="advice.html"><img src="icons/advice.png" alt="Advice"> Advice</a>
+        <a href="account.html"><img src="icons/account.png" alt="Account"> Account</a>
     </div>
 
     <div class="form-container">
         <h2>Budget Form</h2>
-
+        
         <div class="form-group">
             <label for="income">What is your monthly net income?</label>
-            <select id="income" name="income" required>
-                <option value="" disabled selected>Select your income range</option>
+            <select id="income" name="income">
                 <option value="0-1000">$0 - $1,000</option>
                 <option value="1000-2000">$1,000 - $2,000</option>
                 <option value="2000-3000">$2,000 - $3,000</option>
@@ -173,8 +32,7 @@
 
         <div class="form-group">
             <label for="rent">How much do you pay for rent/mortgage each month?</label>
-            <select id="rent" name="rent" required>
-                <option value="" disabled selected>Select your rent range</option>
+            <select id="rent" name="rent">
                 <option value="0-500">$0 - $500</option>
                 <option value="500-1000">$500 - $1,000</option>
                 <option value="1000-2000">$1,000 - $2,000</option>
@@ -184,8 +42,7 @@
 
         <div class="form-group">
             <label for="savings-monthly">How much are you saving each month?</label>
-            <select id="savings-monthly" name="savings-monthly" required>
-                <option value="" disabled selected>Select your savings range</option>
+            <select id="savings-monthly" name="savings-monthly">
                 <option value="0-100">$0 - $100</option>
                 <option value="100-500">$100 - $500</option>
                 <option value="500-1000">$500 - $1,000</option>
@@ -195,8 +52,7 @@
 
         <div class="form-group">
             <label for="groceries">How much do you typically spend on groceries each month?</label>
-            <select id="groceries" name="groceries" required>
-                <option value="" disabled selected>Select your grocery spending range</option>
+            <select id="groceries" name="groceries">
                 <option value="0-100">$0 - $100</option>
                 <option value="100-500">$100 - $500</option>
                 <option value="500-1000">$500 - $1,000</option>
@@ -206,8 +62,7 @@
 
         <div class="form-group">
             <label for="short-term-goals">How much do you think you need to save each month to reach your short-term goals (e.g., paying off debt, vacation)?</label>
-            <select id="short-term-goals" name="short-term-goals" required>
-                <option value="" disabled selected>Select your goal savings range</option>
+            <select id="short-term-goals" name="short-term-goals">
                 <option value="0-100">$0 - $100</option>
                 <option value="100-500">$100 - $500</option>
                 <option value="500-1000">$500 - $1,000</option>
@@ -215,7 +70,10 @@
             </select>
         </div>
 
-        <button type="submit">Submit</button>
+        <button type="submit" onclick="handleSubmit()">Submit</button>
     </div>
+
+    <script src="budget.js"></script>
 </body>
 </html>
+
