@@ -47,6 +47,9 @@
 <div class="form-container">
     <h2>Sign Up</h2>
     <form id="signupForm">
+        <label for="name">Full Name:</label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your full name" required><br>
+
         <label for="email">Email Address:</label><br>
         <input type="email" id="email" name="email" placeholder="Enter your email" required><br>
         
@@ -67,6 +70,7 @@ document.getElementById('signupForm').onsubmit = async function(event) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     const verifyPassword = document.getElementById('verify-password').value;
+    const name = document.getElementById('name').value;
 
     // Validate if passwords match
     if (password !== verifyPassword) {
@@ -75,25 +79,22 @@ document.getElementById('signupForm').onsubmit = async function(event) {
     }
 
     // Send data to the backend for processing
-    const response = await fetch('/api/signup', {
+    const response = await fetch('/signup', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json', // Ensures JSON data is sent
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, name }), // JSON body
     });
 
     if (response.ok) {
-        // Optionally redirect to verification page or show success message
         alert("Sign up successful! Please check your email for the verification code.");
-        // Redirect to verification page if needed
-        // window.location.href = '/verification'; // Uncomment if you have a verification page
     } else {
-        alert("Error signing up. Please try again.");
+        const errorData = await response.json();
+        alert(errorData.error || "Error signing up. Please try again.");
     }
 };
 </script>
 
 </body>
 </html>
-
